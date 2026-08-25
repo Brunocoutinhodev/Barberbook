@@ -1,7 +1,7 @@
 package barberbook.controller;
 
-import barberbook.entity.Cliente;
-import barberbook.service.ClienteService;
+import barberbook.entity.Barbeiro;
+import barberbook.service.BarbeiroService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,25 +13,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/barberbook/cliente")
-public class ClienteController {
+@RequestMapping("api/barberbook/barbeiro")
+public class BarbeiroController {
 
     @Autowired
-    private ClienteService service;
+    private BarbeiroService service;
 
     @PostMapping
-    public Cliente cadastrarCliente(@RequestBody Cliente cliente) {
-        return service.salvarCliente(cliente);
+    public Barbeiro salvarBarbeiro(@RequestBody Barbeiro barbeiro) {
+        return service.salvarBarbeiro(barbeiro);
     }
 
     @GetMapping
-    public List<Cliente> verTodos() {
+    public List<Barbeiro> verTodos() {
         return service.verTodos();
     }
 
     @GetMapping("/{id}")
-    public Optional<Cliente> buscaPorId(@PathVariable Long id) {
+    public Optional<Barbeiro> buscaPorId(@PathVariable Long id) {
         return service.buscaPorId(id);
     }
-
 }
