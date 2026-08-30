@@ -1,6 +1,7 @@
 
 package barberbook.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,7 +21,9 @@ public class Servico {
     private String nome;
     private String descricao;
     private BigDecimal valor;
-    private int duracao_minutos;
+    
+    @Column(name = "duracao_minutos")
+    private int duracaoMinutos;
     
     public Servico(){
             }
@@ -57,13 +60,16 @@ public class Servico {
         this.valor = valor;
     }
 
-    public int getDuracao_minutos() {
-        return duracao_minutos;
+    public int getDuracaoMinutos() {
+        return duracaoMinutos;
     }
 
-    public void setDuracao_minutos(int duracao_minutos) {
-        this.duracao_minutos = duracao_minutos;
+    public void setDuracaoMinutos(int duracaoMinutos) {
+        this.duracaoMinutos = duracaoMinutos;
     }
+
+
+
 
     
 }
