@@ -26,5 +26,8 @@ public class BarbeiroService {
     public Optional<Barbeiro> buscaPorId(@PathVariable Long id) {
         return service.findById(id);
     }
+    public void deleteBarbeiro(Long id){
+        service.deleteById(id);
+    }
 
 }

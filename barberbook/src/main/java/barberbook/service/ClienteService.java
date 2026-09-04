@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Service
 public class ClienteService {
@@ -25,4 +26,10 @@ public class ClienteService {
         return repository.findById(id);
 
     }
+    public void deleteCliente(Long id){
+        repository.deleteById(id);
+        
+    
+    }
+    
 }

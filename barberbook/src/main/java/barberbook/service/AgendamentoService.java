@@ -24,5 +24,8 @@ public class AgendamentoService {
     public Optional<Agendamento> buscaPorId(Long id) {
         return repository.findById(id);
     }
+    public void deleteAgendamento(Long id){
+        repository.deleteById(id);
+    }
 
 }

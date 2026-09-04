@@ -24,4 +24,7 @@ public class ServicoService {
     public Optional<Servico> buscarPorId(Long id) {
         return repository.findById(id);
     }
+    public void deleteServico(Long id){
+        repository.deleteById(id);
+    }
 }
